@@ -1,20 +1,20 @@
 import { Button } from "@/components/ui/button";
 
-interface GDSHeaderProps {
+interface PositHeaderProps {
   serviceName: string;
   phase?: "alpha" | "beta" | "live";
   feedbackUrl?: string;
 }
 
-export const GDSHeader = ({ serviceName, phase = "beta", feedbackUrl }: GDSHeaderProps) => {
+export const PositHeader = ({ serviceName, phase = "beta", feedbackUrl }: PositHeaderProps) => {
   return (
-    <header className="border-b-8 border-primary bg-background">
-      {/* GOV.UK Header - Updated 2025 Brand */}
+    <header className="border-b-4 border-primary bg-background">
+      {/* Government Header */}
       <div className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             <div className="flex items-center space-x-2">
-              <div className="text-lg font-bold">GOV.UK</div>
+              <div className="text-lg font-bold">HM Government</div>
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ interface DocumentUploadProps {
 
 export const DocumentUpload = ({ 
   onFileUpload, 
-  supportedFormats = [".pdf", ".docx", ".txt", ".md"] 
+  supportedFormats = [".pdf", ".docx", ".txt", ".md", ".html", ".xlsx", ".csv"] 
 }: DocumentUploadProps) => {
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [isDragOver, setIsDragOver] = useState(false);
@@ -166,7 +166,7 @@ export const DocumentUpload = ({
           <div>
             <h3 className="text-lg font-semibold">Upload documents</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Drag and drop files here, or click to select files
+              Upload Confluence pages, SharePoint documents, training materials, or other documentation
             </p>
             <p className="text-xs text-muted-foreground mt-2">
               Supported formats: {supportedFormats.join(", ")}

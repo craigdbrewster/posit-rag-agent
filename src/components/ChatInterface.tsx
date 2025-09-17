@@ -52,7 +52,7 @@ export const ChatInterface = ({ onSendMessage }: ChatInterfaceProps) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
-      content: "Hello! I'm your GDS Design System assistant. I can help you with UK Government Digital Service guidelines, component implementation, accessibility requirements, and more. Try asking: \"Show me button code\" or \"What are the GDS colors?\"",
+      content: "Hello! I'm your Posit Connect assistant for government data analysts. I can help you with deployment workflows, Python and R development, training materials, gold standard applications, and best practices. Try asking: \"Show me Shiny app code\" or \"How do I deploy a Python dashboard?\"",
       sender: "assistant",
       timestamp: new Date(),
     },
@@ -186,7 +186,7 @@ export const ChatInterface = ({ onSendMessage }: ChatInterfaceProps) => {
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about GDS components, patterns, or guidelines..."
+              placeholder="Ask about Posit Connect, Python, R, training, or deployment..."
               className="min-h-[44px] max-h-32 resize-none"
               disabled={isLoading}
             />

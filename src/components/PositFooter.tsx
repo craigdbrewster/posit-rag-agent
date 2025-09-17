@@ -1,4 +1,4 @@
-export const GDSFooter = () => {
+export const PositFooter = () => {
   return (
     <footer className="mt-auto border-t border-border bg-muted">
       <div className="container mx-auto px-4 py-8">
@@ -30,42 +30,42 @@ export const GDSFooter = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Services and information</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-primary hover:underline">
-                  Benefits
+                <a href="https://docs.posit.co/connect/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                  Posit Connect Docs
                 </a>
               </li>
               <li>
-                <a href="#" className="text-primary hover:underline">
-                  Births, deaths, marriages
+                <a href="https://education.rstudio.com/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                  R Training
                 </a>
               </li>
               <li>
-                <a href="#" className="text-primary hover:underline">
-                  Business and self-employed
+                <a href="https://www.python.org/about/gettingstarted/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                  Python Learning
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Departments and policy</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">Data & Analytics</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-primary hover:underline">
-                  How government works
+                  Data Standards
                 </a>
               </li>
               <li>
                 <a href="#" className="text-primary hover:underline">
-                  Departments
+                  Analytics Guidelines
                 </a>
               </li>
               <li>
                 <a href="#" className="text-primary hover:underline">
-                  Worldwide
+                  Best Practices
                 </a>
               </li>
             </ul>
@@ -76,7 +76,7 @@ export const GDSFooter = () => {
             <p className="text-muted-foreground">
               This service is built and maintained by the{" "}
               <a href="#" className="text-primary hover:underline">
-                Government Digital Service
+                HMRC Data Science Team
               </a>
             </p>
           </div>
