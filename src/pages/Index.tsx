@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { PositHeader } from "@/components/PositHeader";
 import { PositFooter } from "@/components/PositFooter";
-import { DocumentUpload } from "@/components/DocumentUpload";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { MessageSquare, Upload, Search, HelpCircle, ArrowRight } from "lucide-react";
+import { MessageSquare, Search, HelpCircle, ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
@@ -24,18 +24,6 @@ const Index = () => {
     }
   };
 
-  const handleFileUpload = async (files: File[]): Promise<void> => {
-    // This would integrate with your Posit Connect backend to process files
-    console.log("Files to upload:", files.map(f => f.name));
-    
-    // Simulate file processing for government documents
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    toast({
-      title: "Documents processed successfully",
-      description: `${files.length} document(s) have been analyzed and added to the knowledge base. You can now ask questions about their content.`,
-    });
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -127,18 +115,6 @@ const Index = () => {
           </Card>
         </div>
 
-        {/* Upload Section */}
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold mb-3 flex items-center space-x-2">
-            <Upload className="h-5 w-5" />
-            <span>Upload Documents</span>
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Upload Confluence pages, SharePoint documents, training materials, or other files 
-            to enhance the knowledge base. Supported formats: PDF, Word, Excel, PowerPoint, and text files.
-          </p>
-          <DocumentUpload onFileUpload={handleFileUpload} />
-        </Card>
       </main>
 
       <PositFooter />

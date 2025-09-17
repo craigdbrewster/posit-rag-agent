@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Send, User, Bot, Loader2 } from "lucide-react";
+import { Send, User, Bot, Loader2, Paperclip } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface Message {
@@ -187,7 +187,7 @@ export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfacePr
       {/* Input Form */}
       <div className="border-t border-border p-4">
         <form onSubmit={handleSubmit} className="flex space-x-2">
-          <div className="flex-1">
+          <div className="flex-1 relative">
             <label htmlFor="message-input" className="sr-only">
               Type your message
             </label>
@@ -198,9 +198,19 @@ export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfacePr
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask about Posit Connect, Python, R, training, or deployment..."
-              className="min-h-[44px] max-h-32 resize-none"
+              className="min-h-[44px] max-h-32 resize-none pr-12"
               disabled={isLoading}
             />
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="absolute right-2 top-2 h-8 w-8 p-0"
+              disabled={isLoading}
+            >
+              <Paperclip className="h-4 w-4" />
+              <span className="sr-only">Attach file</span>
+            </Button>
           </div>
           <Button
             type="submit"
