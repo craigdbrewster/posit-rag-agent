@@ -78,9 +78,44 @@ export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfacePr
   // Handle initial message from navigation
   useEffect(() => {
     if (initialMessage && initialMessage.trim()) {
-      setInputMessage(initialMessage);
+      // Add the user message immediately when there's an initial message
+      const userMessage: Message = {
+        id: `user-initial-${Date.now()}`,
+        content: initialMessage.trim(),
+        sender: "user",
+        timestamp: new Date(),
+      };
+      
+      setMessages(prev => [...prev, userMessage]);
+      
+      // Process the initial message and get AI response
+      const processInitialMessage = async () => {
+        setIsLoading(true);
+        try {
+          const response = await onSendMessage(initialMessage.trim());
+          
+          const assistantMessage: Message = {
+            id: `assistant-initial-${Date.now()}`,
+            content: response,
+            sender: "assistant",
+            timestamp: new Date(),
+          };
+
+          setMessages(prev => [...prev, assistantMessage]);
+        } catch (error) {
+          toast({
+            title: "Error",
+            description: "Failed to get response from the AI assistant. Please try again.",
+            variant: "destructive",
+          });
+        } finally {
+          setIsLoading(false);
+        }
+      };
+      
+      processInitialMessage();
     }
-  }, [initialMessage]);
+  }, [initialMessage, onSendMessage, toast]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
