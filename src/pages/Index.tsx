@@ -1,28 +1,26 @@
 import { useState } from "react";
 import { PositHeader } from "@/components/PositHeader";
 import { PositFooter } from "@/components/PositFooter";
-import { ChatInterface } from "@/components/ChatInterface";
 import { DocumentUpload } from "@/components/DocumentUpload";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MessageSquare, Upload, Search, HelpCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { MessageSquare, Upload, Search, HelpCircle, ArrowRight } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-import { processPositQuery } from "@/lib/positRAG";
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("chat");
+  const [chatInput, setChatInput] = useState("");
   const { toast } = useToast();
+  const navigate = useNavigate();
 
-  const handleSendMessage = async (message: string): Promise<string> => {
-    // Enhanced RAG system with Posit Connect knowledge and web search
-    try {
-      const response = await processPositQuery(message, true);
-      return response;
-    } catch (error) {
-      // Fallback response
-      return "I'm here to help with Posit Connect, Python, and R development for government data analysts. You can ask me about deployment, training materials, best practices, code examples, and more. For the most current information, I recommend checking docs.posit.co/connect/.";
+  const handleChatStart = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (chatInput.trim()) {
+      // Navigate to chat page with the initial message
+      navigate('/chat', { state: { initialMessage: chatInput.trim() } });
+    } else {
+      navigate('/chat');
     }
   };
 
@@ -58,52 +56,89 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Quick Navigation */}
-        <div className="flex gap-4 mb-8">
-          <Button variant="outline" asChild>
-            <Link to="/knowledge-hub" className="flex items-center space-x-2">
-              <Search className="h-4 w-4" />
-              <span>Knowledge Hub</span>
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link to="/help" className="flex items-center space-x-2">
-              <HelpCircle className="h-4 w-4" />
-              <span>Help & Documentation</span>
-            </Link>
-          </Button>
+        {/* Chat Input */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <form onSubmit={handleChatStart} className="space-y-4">
+            <div className="relative">
+              <Input
+                type="text"
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                placeholder="Ask about Posit Connect, Python, R, training, or deployment..."
+                className="pr-12 h-12 text-base"
+              />
+              <Button
+                type="submit"
+                size="sm"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2"
+              >
+                <ArrowRight className="h-4 w-4" />
+                <span className="sr-only">Start chat</span>
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground text-center">
+              Or <Link to="/chat" className="text-primary hover:underline">start a new conversation</Link>
+            </p>
+          </form>
         </div>
 
-        {/* Main Content Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 h-auto">
-            <TabsTrigger value="chat" className="flex items-center space-x-2 py-3">
-              <MessageSquare className="h-4 w-4" />
-              <span>Chat</span>
-            </TabsTrigger>
-            <TabsTrigger value="upload" className="flex items-center space-x-2 py-3">
-              <Upload className="h-4 w-4" />
-              <span>Upload Documents</span>
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="chat" className="space-y-0">
-            <Card className="h-[600px]">
-              <ChatInterface onSendMessage={handleSendMessage} />
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="upload" className="space-y-6">
-            <Card className="p-6">
-              <h3 className="text-2xl font-bold mb-4">Upload Government Documents</h3>
-              <p className="text-muted-foreground mb-6">
-                Upload Confluence pages, SharePoint documents, training materials, or other files 
-                to enhance the knowledge base. Supported formats: PDF, Word, Excel, PowerPoint, and text files.
+        {/* Navigation Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <Card className="p-6 hover:shadow-md transition-shadow">
+            <Link to="/chat" className="block">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <MessageSquare className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-semibold">Chat Assistant</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Get instant help with code examples, deployment guides, and best practices.
               </p>
-              <DocumentUpload onFileUpload={handleFileUpload} />
-            </Card>
-          </TabsContent>
-        </Tabs>
+            </Link>
+          </Card>
+
+          <Card className="p-6 hover:shadow-md transition-shadow">
+            <Link to="/knowledge-hub" className="block">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Search className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-semibold">Knowledge Hub</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Browse training materials, gold standard apps, and reusable patterns.
+              </p>
+            </Link>
+          </Card>
+
+          <Card className="p-6 hover:shadow-md transition-shadow">
+            <Link to="/help" className="block">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <HelpCircle className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-semibold">Help & Documentation</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Access setup guides, troubleshooting, and mentoring resources.
+              </p>
+            </Link>
+          </Card>
+        </div>
+
+        {/* Upload Section */}
+        <Card className="p-6">
+          <h3 className="text-xl font-semibold mb-3 flex items-center space-x-2">
+            <Upload className="h-5 w-5" />
+            <span>Upload Documents</span>
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            Upload Confluence pages, SharePoint documents, training materials, or other files 
+            to enhance the knowledge base. Supported formats: PDF, Word, Excel, PowerPoint, and text files.
+          </p>
+          <DocumentUpload onFileUpload={handleFileUpload} />
+        </Card>
       </main>
 
       <PositFooter />

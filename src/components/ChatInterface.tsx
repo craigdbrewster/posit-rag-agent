@@ -46,9 +46,10 @@ const MessageContent = ({ content }: { content: string }) => {
 
 interface ChatInterfaceProps {
   onSendMessage: (message: string) => Promise<string>;
+  initialMessage?: string | null;
 }
 
-export const ChatInterface = ({ onSendMessage }: ChatInterfaceProps) => {
+export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfaceProps) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
@@ -73,6 +74,13 @@ export const ChatInterface = ({ onSendMessage }: ChatInterfaceProps) => {
       scrollToBottom();
     }
   }, [messages]);
+
+  // Handle initial message from navigation
+  useEffect(() => {
+    if (initialMessage && initialMessage.trim()) {
+      setInputMessage(initialMessage);
+    }
+  }, [initialMessage]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
