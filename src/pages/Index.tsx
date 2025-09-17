@@ -64,9 +64,6 @@ const Index = () => {
                 <span className="sr-only">Start chat</span>
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground text-center">
-              Or <Link to="/chat" className="text-primary hover:underline">start a new conversation</Link>
-            </p>
           </form>
         </div>
 

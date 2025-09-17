@@ -128,9 +128,9 @@ export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfacePr
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col min-h-0">
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="space-y-4 mb-6">
         {messages.map((message) => (
           <div
             key={message.id}
@@ -184,48 +184,52 @@ export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfacePr
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Form */}
-      <div className="border-t border-border p-4">
-        <form onSubmit={handleSubmit} className="flex space-x-2">
-          <div className="flex-1 relative">
-            <label htmlFor="message-input" className="sr-only">
-              Type your message
-            </label>
-            <Textarea
-              id="message-input"
-              ref={textareaRef}
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Ask about Posit Connect, Python, R, training, or deployment..."
-              className="min-h-[44px] max-h-32 resize-none pr-12"
-              disabled={isLoading}
-            />
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              className="absolute right-2 top-2 h-8 w-8 p-0"
-              disabled={isLoading}
-            >
-              <Paperclip className="h-4 w-4" />
-              <span className="sr-only">Attach file</span>
-            </Button>
-          </div>
-          <Button
-            type="submit"
-            disabled={!inputMessage.trim() || isLoading}
-            size="lg"
-            className="self-end"
-          >
-            {isLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <Send className="h-4 w-4" />
-            )}
-            <span className="sr-only">Send message</span>
-          </Button>
-        </form>
+      {/* Fixed Input Form at Bottom */}
+      <div className="fixed bottom-0 left-0 right-0 bg-background border-t shadow-lg z-50">
+        <div className="container mx-auto max-w-4xl p-4">
+          <form onSubmit={handleSubmit} className="flex space-x-2">
+            <div className="flex-1 relative">
+              <label htmlFor="message-input" className="sr-only">
+                Type your message
+              </label>
+              <Textarea
+                id="message-input"
+                ref={textareaRef}
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Ask about Posit Connect, Python, R, training, or deployment..."
+                className="min-h-[44px] max-h-32 resize-none pr-20"
+                disabled={isLoading}
+              />
+              <div className="absolute right-2 top-2 flex space-x-1">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 p-0"
+                  disabled={isLoading}
+                >
+                  <Paperclip className="h-4 w-4" />
+                  <span className="sr-only">Attach file</span>
+                </Button>
+                <Button
+                  type="submit"
+                  disabled={!inputMessage.trim() || isLoading}
+                  size="sm"
+                  className="h-8 w-8 p-0"
+                >
+                  {isLoading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
+                  <span className="sr-only">Send message</span>
+                </Button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

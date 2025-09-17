@@ -37,7 +37,7 @@ const Chat = () => {
         feedbackUrl="mailto:posit-support@hmrc.gov.uk"
       />
       
-      <main className="flex-1 container mx-auto px-4 py-8 pb-32">
+      <main className="flex-1 container mx-auto px-4 py-8 pb-24">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
             <h1 className="text-3xl font-bold mb-2">Chat with AI Assistant</h1>
@@ -46,18 +46,9 @@ const Chat = () => {
             </p>
           </div>
           
-          <div className="space-y-4">
-            {/* Chat messages will be rendered here */}
-          </div>
-        </div>
-      </main>
-
-      {/* Floating Chat Interface */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background border-t shadow-lg">
-        <div className="container mx-auto max-w-4xl h-80">
           <ChatInterface onSendMessage={handleSendMessage} initialMessage={initialMessage} />
         </div>
-      </div>
+      </main>
 
       <PositFooter />
     </div>
