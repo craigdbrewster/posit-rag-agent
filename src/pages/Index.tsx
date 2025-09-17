@@ -68,17 +68,17 @@ const Index = () => {
         </div>
 
         {/* Navigation Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="p-6 hover:shadow-md transition-shadow">
-            <Link to="/chat" className="block">
+            <Link to="/showcased-apps" className="block">
               <div className="flex items-center space-x-3 mb-3">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <MessageSquare className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="font-semibold">Chat Assistant</h3>
+                <h3 className="font-semibold">Showcased apps</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Get instant help with code examples, deployment guides, and best practices.
+                Explore exemplary Posit Connect applications and proven patterns from across government.
               </p>
             </Link>
           </Card>
@@ -92,7 +92,7 @@ const Index = () => {
                 <h3 className="font-semibold">Knowledge Hub</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Browse training materials, gold standard apps, and reusable patterns.
+                Browse training materials, documentation, and reusable development patterns.
               </p>
             </Link>
           </Card>
@@ -110,6 +110,36 @@ const Index = () => {
               </p>
             </Link>
           </Card>
+        </div>
+
+        {/* Latest Updates */}
+        <div className="max-w-4xl">
+          <h2 className="text-2xl font-bold mb-6">Latest updates</h2>
+          <div className="space-y-6">
+            <div className="border-l-4 border-primary pl-6">
+              <h3 className="text-lg font-semibold mb-2">New Python dashboard template available</h3>
+              <p className="text-muted-foreground mb-2">
+                A comprehensive Plotly Dash template for government data visualisation, following GDS design principles and accessibility standards.
+              </p>
+              <p className="text-sm text-muted-foreground">Published 15 September 2025</p>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-6">
+              <h3 className="text-lg font-semibold mb-2">R Shiny deployment guide updated</h3>
+              <p className="text-muted-foreground mb-2">
+                Enhanced documentation covering containerisation, environment management, and performance optimisation for production deployments.
+              </p>
+              <p className="text-sm text-muted-foreground">Published 12 September 2025</p>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-6">
+              <h3 className="text-lg font-semibold mb-2">Featured: HMRC Tax Calculator showcase</h3>
+              <p className="text-muted-foreground mb-2">
+                Interactive tax calculation tool demonstrating best practices for secure data handling and user-friendly government service design.
+              </p>
+              <p className="text-sm text-muted-foreground">Published 8 September 2025</p>
+            </div>
+          </div>
         </div>
 
       </main>

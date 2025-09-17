@@ -50,14 +50,7 @@ interface ChatInterfaceProps {
 }
 
 export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfaceProps) => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "welcome",
-      content: "Hello! I'm your Posit Connect assistant for government data analysts. I can help you with deployment workflows, Python and R development, training materials, gold standard applications, and best practices. Try asking: \"Show me Shiny app code\" or \"How do I deploy a Python dashboard?\"",
-      sender: "assistant",
-      timestamp: new Date(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -69,10 +62,7 @@ export const ChatInterface = ({ onSendMessage, initialMessage }: ChatInterfacePr
   };
 
   useEffect(() => {
-    // Only scroll to bottom if there's more than the initial welcome message
-    if (messages.length > 1) {
-      scrollToBottom();
-    }
+    scrollToBottom();
   }, [messages]);
 
   // Handle initial message from navigation
