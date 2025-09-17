@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MessageSquare, Upload, Search, HelpCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { processPositQuery } from "@/lib/positRAG";
 
@@ -57,20 +58,32 @@ const Index = () => {
           </p>
         </div>
 
+        {/* Quick Navigation */}
+        <div className="flex gap-4 mb-8">
+          <Button variant="outline" asChild>
+            <Link to="/knowledge-hub" className="flex items-center space-x-2">
+              <Search className="h-4 w-4" />
+              <span>Knowledge Hub</span>
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link to="/help" className="flex items-center space-x-2">
+              <HelpCircle className="h-4 w-4" />
+              <span>Help & Documentation</span>
+            </Link>
+          </Button>
+        </div>
+
         {/* Main Content Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 h-auto">
+          <TabsList className="grid w-full grid-cols-2 h-auto">
             <TabsTrigger value="chat" className="flex items-center space-x-2 py-3">
               <MessageSquare className="h-4 w-4" />
               <span>Chat</span>
             </TabsTrigger>
-            <TabsTrigger value="search" className="flex items-center space-x-2 py-3">
-              <Search className="h-4 w-4" />
-              <span>Browse Resources</span>
-            </TabsTrigger>
-            <TabsTrigger value="help" className="flex items-center space-x-2 py-3">
-              <HelpCircle className="h-4 w-4" />
-              <span>Help</span>
+            <TabsTrigger value="upload" className="flex items-center space-x-2 py-3">
+              <Upload className="h-4 w-4" />
+              <span>Upload Documents</span>
             </TabsTrigger>
           </TabsList>
 
@@ -80,167 +93,14 @@ const Index = () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="search" className="space-y-6">
+          <TabsContent value="upload" className="space-y-6">
             <Card className="p-6">
-              <h3 className="text-2xl font-bold mb-4">Browse Posit Connect Resources</h3>
+              <h3 className="text-2xl font-bold mb-4">Upload Government Documents</h3>
               <p className="text-muted-foreground mb-6">
-                Quick access to training materials, documentation, and gold standard applications 
-                from across government departments.
+                Upload Confluence pages, SharePoint documents, training materials, or other files 
+                to enhance the knowledge base. Supported formats: PDF, Word, Excel, PowerPoint, and text files.
               </p>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                <Card className="p-4 hover:bg-secondary/50 transition-colors">
-                  <h4 className="font-semibold mb-2">Training Materials</h4>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Python, R, and Posit Connect onboarding
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <a href="https://education.rstudio.com/" target="_blank" rel="noopener noreferrer">
-                      View Training
-                    </a>
-                  </Button>
-                </Card>
-                <Card className="p-4 hover:bg-secondary/50 transition-colors">
-                  <h4 className="font-semibold mb-2">Gold Standard Apps</h4>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Showcase applications from HMRC tenancies
-                  </p>
-                  <Button variant="outline" size="sm">
-                    View Examples
-                  </Button>
-                </Card>
-                <Card className="p-4 hover:bg-secondary/50 transition-colors">
-                  <h4 className="font-semibold mb-2">UX Patterns</h4>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Reusable patterns for common tasks
-                  </p>
-                  <Button variant="outline" size="sm">
-                    View Patterns
-                  </Button>
-                </Card>
-                <Card className="p-4 hover:bg-secondary/50 transition-colors">
-                  <h4 className="font-semibold mb-2">Posit Connect Docs</h4>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Official deployment and admin guides
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <a href="https://docs.posit.co/connect/" target="_blank" rel="noopener noreferrer">
-                      View Docs
-                    </a>
-                  </Button>
-                </Card>
-                <Card className="p-4 hover:bg-secondary/50 transition-colors">
-                  <h4 className="font-semibold mb-2">Monitoring Tools</h4>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Self-service dashboards and analytics
-                  </p>
-                  <Button variant="outline" size="sm">
-                    View Tools
-                  </Button>
-                </Card>
-                <Card className="p-4 hover:bg-secondary/50 transition-colors">
-                  <h4 className="font-semibold mb-2">User Research</h4>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Insights to guide tenancy decisions
-                  </p>
-                  <Button variant="outline" size="sm">
-                    View Research
-                  </Button>
-                </Card>
-              </div>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="help" className="space-y-6">
-            <div className="grid gap-6 lg:grid-cols-2">
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-4">How to use this service</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold">1. Ask Posit Connect questions</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Get help with deployment, Python/R development, training materials, and best practices for government data teams.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">2. Get code examples</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Request Shiny, Streamlit, R Markdown, and API code snippets with government-specific examples.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">3. Upload documents</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Upload Confluence pages, SharePoint documents, or other training materials for analysis and querying.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">4. Access gold standards</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Browse showcase applications and UX patterns from successful government data projects.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-4">What you can ask about</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold">Posit Connect Deployment</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Publishing Shiny apps, Python dashboards, R Markdown reports, and APIs to government Posit Connect instances.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Python & R Development</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Best practices, code examples, training materials, and government-specific guidelines for data science teams.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Training & Mentoring</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Onboarding materials, skill development paths, coaching resources, and one-to-one mentoring guidance.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Gold Standard Applications</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Showcase applications, UX patterns, monitoring tools, and user research insights from successful tenancies.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-4">Example Questions</h3>
-              <div className="grid gap-3 md:grid-cols-2">
-                <div className="text-sm">
-                  <p className="font-medium mb-1">• "Show me Shiny app code"</p>
-                  <p className="font-medium mb-1">• "How do I deploy a Python dashboard?"</p>
-                  <p className="font-medium mb-1">• "What are R best practices for government?"</p>
-                  <p className="font-medium mb-1">• "Show me training materials for new data analysts"</p>
-                </div>
-                <div className="text-sm">
-                  <p className="font-medium mb-1">• "Create an R Markdown template"</p>
-                  <p className="font-medium mb-1">• "How do I build an API with plumber?"</p>
-                  <p className="font-medium mb-1">• "What are the gold standard UX patterns?"</p>
-                  <p className="font-medium mb-1">• "How do I set up monitoring for my app?"</p>
-                </div>
-              </div>
-              <div className="flex space-x-4 mt-6">
-                <Button asChild>
-                  <a href="https://docs.posit.co/connect/" target="_blank" rel="noopener noreferrer">
-                    Posit Connect Docs
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://education.rstudio.com/" target="_blank" rel="noopener noreferrer">
-                    R Training Resources
-                  </a>
-                </Button>
-              </div>
+              <DocumentUpload onFileUpload={handleFileUpload} />
             </Card>
           </TabsContent>
         </Tabs>
