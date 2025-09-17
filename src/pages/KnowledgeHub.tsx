@@ -27,7 +27,7 @@ const KnowledgeHub = () => {
         <div className="mb-8">
           <h2 className="text-3xl font-bold mb-4">Knowledge Hub</h2>
           <p className="text-lg text-muted-foreground max-w-3xl">
-            Browse training materials, documentation, and gold standard applications 
+            Browse training materials, documentation, and development resources 
             from across government departments.
           </p>
         </div>
@@ -42,15 +42,6 @@ const KnowledgeHub = () => {
               <a href="https://education.rstudio.com/" target="_blank" rel="noopener noreferrer">
                 View Training
               </a>
-            </Button>
-          </Card>
-          <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h4 className="font-semibold mb-2">Gold Standard Apps</h4>
-            <p className="text-sm text-muted-foreground mb-3">
-              Showcase applications from HMRC tenancies
-            </p>
-            <Button variant="outline" size="sm">
-              View Examples
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
