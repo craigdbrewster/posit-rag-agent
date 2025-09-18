@@ -34,7 +34,7 @@ const Chat = () => {
       <PositHeader 
         serviceName="Posit Connect RAG Agent" 
         phase="beta"
-        feedbackUrl="mailto:posit-support@hmrc.gov.uk"
+        feedbackUrl="mailto:posit-support@example.gov.uk"
       />
       
       <main className="flex-1 pb-24">

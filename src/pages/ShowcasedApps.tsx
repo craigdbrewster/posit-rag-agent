@@ -8,11 +8,11 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 const ShowcasedApps = () => {
   const showcasedApps = [
     {
-      title: "HMRC Tax Calculator",
-      description: "Interactive tax calculation tool demonstrating secure data handling and user-friendly government service design. Built with R Shiny following GDS principles.",
+      title: "Government Calculator",
+      description: "Interactive calculation tool demonstrating secure data handling and user-friendly government service design. Built with R Shiny following GDS principles.",
       image: "/placeholder.svg",
       link: "#",
-      department: "HMRC",
+      department: "Department A",
       technology: "R Shiny"
     },
     {
@@ -62,7 +62,7 @@ const ShowcasedApps = () => {
       <PositHeader 
         serviceName="Posit Connect RAG Agent" 
         phase="beta"
-        feedbackUrl="mailto:posit-support@hmrc.gov.uk"
+        feedbackUrl="mailto:posit-support@example.gov.uk"
       />
       
       <main className="flex-1 container mx-auto px-4 py-8">

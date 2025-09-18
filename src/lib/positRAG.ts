@@ -71,7 +71,7 @@ st.markdown("---")
 st.sidebar.header("Dashboard Controls")
 department = st.sidebar.selectbox(
     "Select Department:",
-    ["HMRC", "DWP", "DEFRA", "Home Office"]
+    ["Department A", "Department B", "Department C", "Department D"]
 )
 
 date_range = st.sidebar.date_input(

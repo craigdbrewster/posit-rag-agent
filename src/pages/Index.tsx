@@ -30,7 +30,7 @@ const Index = () => {
       <PositHeader 
         serviceName="Posit Connect RAG Agent" 
         phase="beta"
-        feedbackUrl="mailto:posit-support@hmrc.gov.uk"
+        feedbackUrl="mailto:posit-support@example.gov.uk"
       />
       
       <main className="flex-1 container mx-auto px-4 py-8">
@@ -133,9 +133,9 @@ const Index = () => {
             </div>
             
             <div className="border-l-4 border-primary pl-6">
-              <h3 className="text-lg font-semibold mb-2">Featured: HMRC Tax Calculator showcase</h3>
+              <h3 className="text-lg font-semibold mb-2">Featured: Government Calculator showcase</h3>
               <p className="text-muted-foreground mb-2">
-                Interactive tax calculation tool demonstrating best practices for secure data handling and user-friendly government service design.
+                Interactive calculation tool demonstrating best practices for secure data handling and user-friendly government service design.
               </p>
               <p className="text-sm text-muted-foreground">Published 8 September 2025</p>
             </div>

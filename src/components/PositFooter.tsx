@@ -76,7 +76,7 @@ export const PositFooter = () => {
             <p className="text-muted-foreground">
               This service is built and maintained by the{" "}
               <a href="#" className="text-primary underline hover:no-underline">
-                HMRC Data Science Team
+                Government Data Science Team
               </a>
             </p>
           </div>
