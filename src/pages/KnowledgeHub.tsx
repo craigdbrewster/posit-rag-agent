@@ -45,9 +45,9 @@ const KnowledgeHub = () => {
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h4 className="font-semibold mb-2">UX Patterns</h4>
+            <h4 className="font-semibold mb-2">Templates and toolkits</h4>
             <p className="text-sm text-muted-foreground mb-3">
-              Reusable patterns for common tasks
+              Ready-to-use templates and development toolkits for common government data science tasks
             </p>
             <Button variant="outline" size="sm">
               View Patterns

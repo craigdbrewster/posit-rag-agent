@@ -39,8 +39,8 @@ const Index = () => {
           <h2 className="text-3xl font-bold mb-4">AI-powered Posit Connect hub for government data analysts</h2>
           <p className="text-lg text-muted-foreground max-w-3xl">
             Your comprehensive resource for Posit Connect deployment, Python and R development, training materials, 
-            best practices, and "gold standard" applications. Upload your documentation for analysis, get instant 
-            answers about data science workflows, and access curated examples from across government departments.
+            and best practices. Get instant answers about data science workflows, explore showcased applications,
+            and access curated development resources from across government departments.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ const Index = () => {
                 type="text"
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
-                placeholder="Ask about Posit Connect, Python, R, training, or deployment..."
+                placeholder="Ask about Posit Connect, Python, R..."
                 className="pr-12 h-12 text-base"
               />
               <Button
@@ -92,7 +92,7 @@ const Index = () => {
                 <h3 className="font-semibold">Knowledge Hub</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Browse training materials, documentation, and reusable development patterns.
+                You can browse training materials, documentation, and reusable development patterns.
               </p>
             </Link>
           </Card>
@@ -106,7 +106,7 @@ const Index = () => {
                 <h3 className="font-semibold">Help & Documentation</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Access setup guides, troubleshooting, and mentoring resources.
+                You can access setup guides, troubleshooting, and mentoring resources.
               </p>
             </Link>
           </Card>
