@@ -25,9 +25,9 @@ const Help = () => {
         </div>
 
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-4">Help & Documentation</h2>
+          <h2 className="text-3xl font-bold mb-4">Help with this service</h2>
           <p className="text-lg text-muted-foreground max-w-3xl">
-            Get help with Posit Connect, find documentation, and learn how to use this service effectively.
+            Get help with using this AI-powered Posit Connect hub and find documentation for effective use.
           </p>
         </div>
 
@@ -48,15 +48,15 @@ const Help = () => {
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold">3. Upload documents</h4>
+                <h4 className="font-semibold">3. Browse showcased apps</h4>
                 <p className="text-sm text-muted-foreground">
-                  Upload Confluence pages, SharePoint documents, or other training materials for analysis and querying.
+                  Explore exemplary applications and proven patterns from government departments via the Showcased apps section.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold">4. Access gold standards</h4>
+                <h4 className="font-semibold">4. Access knowledge resources</h4>
                 <p className="text-sm text-muted-foreground">
-                  Browse showcase applications and UX patterns from successful government data projects.
+                  Find training materials, documentation, and templates through the Knowledge Hub.
                 </p>
               </div>
             </div>
@@ -84,9 +84,9 @@ const Help = () => {
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold">Gold Standard Applications</h4>
+                <h4 className="font-semibold">Showcased Applications</h4>
                 <p className="text-sm text-muted-foreground">
-                  Showcase applications, UX patterns, monitoring tools, and user research insights from successful tenancies.
+                  Examples of successful government applications, templates, and proven development patterns.
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ const Help = () => {
             <div className="text-sm">
               <p className="font-medium mb-1">• "Create an R Markdown template"</p>
               <p className="font-medium mb-1">• "How do I build an API with plumber?"</p>
-              <p className="font-medium mb-1">• "What are the gold standard UX patterns?"</p>
+              <p className="font-medium mb-1">• "Show me showcased government apps"</p>
               <p className="font-medium mb-1">• "How do I set up monitoring for my app?"</p>
             </div>
           </div>

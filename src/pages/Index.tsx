@@ -52,7 +52,7 @@ const Index = () => {
                 type="text"
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
-                placeholder="Ask about Posit Connect, Python, R..."
+                placeholder="Ask about Posit Connect, Python, R."
                 className="pr-12 h-12 text-base"
               />
               <Button
@@ -103,7 +103,7 @@ const Index = () => {
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <HelpCircle className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="font-semibold">Help & Documentation</h3>
+                <h3 className="font-semibold">Help with this service</h3>
               </div>
               <p className="text-sm text-muted-foreground">
                 You can access setup guides, troubleshooting, and mentoring resources.
