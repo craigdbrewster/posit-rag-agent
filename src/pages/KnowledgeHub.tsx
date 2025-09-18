@@ -82,6 +82,15 @@ const KnowledgeHub = () => {
               View Research
             </Button>
           </Card>
+          <Card className="p-4 hover:bg-secondary/50 transition-colors">
+            <h3 className="font-semibold mb-2">Coaching and Mentoring</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              Connect with experienced practitioners and development opportunities
+            </p>
+            <Button variant="outline" size="sm">
+              Find Support
+            </Button>
+          </Card>
         </div>
       </main>
 
