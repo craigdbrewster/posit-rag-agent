@@ -1,7 +1,7 @@
 import { PositHeader } from "@/components/PositHeader";
 import { PositFooter } from "@/components/PositFooter";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
@@ -96,7 +96,7 @@ const ShowcasedApps = () => {
               </div>
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
-                  <CardTitle className="text-lg">{app.title}</CardTitle>
+                  <h2 className="font-semibold leading-none tracking-tight text-lg">{app.title}</h2>
                   <div className="flex flex-col text-xs text-muted-foreground text-right">
                     <span>{app.department}</span>
                     <span>{app.technology}</span>

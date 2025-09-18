@@ -34,7 +34,7 @@ const KnowledgeHub = () => {
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h4 className="font-semibold mb-2">Training Materials</h4>
+            <h3 className="font-semibold mb-2">Training Materials</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Python, R, and Posit Connect onboarding
             </p>
@@ -45,7 +45,7 @@ const KnowledgeHub = () => {
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h4 className="font-semibold mb-2">Templates and toolkits</h4>
+            <h3 className="font-semibold mb-2">Templates and toolkits</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Ready-to-use templates and development toolkits for common government data science tasks
             </p>
@@ -54,7 +54,7 @@ const KnowledgeHub = () => {
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h4 className="font-semibold mb-2">Posit Connect Docs</h4>
+            <h3 className="font-semibold mb-2">Posit Connect Docs</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Official deployment and admin guides
             </p>
@@ -65,7 +65,7 @@ const KnowledgeHub = () => {
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h4 className="font-semibold mb-2">Monitoring Tools</h4>
+            <h3 className="font-semibold mb-2">Monitoring Tools</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Self-service dashboards and analytics
             </p>
@@ -74,7 +74,7 @@ const KnowledgeHub = () => {
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h4 className="font-semibold mb-2">User Research</h4>
+            <h3 className="font-semibold mb-2">User Research</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Insights to guide tenancy decisions
             </p>
