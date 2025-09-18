@@ -75,7 +75,7 @@ const Index = () => {
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <MessageSquare className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="font-semibold">Showcased apps</h3>
+                <h3 className="font-semibold">Showcased Apps</h3>
               </div>
               <p className="text-sm text-muted-foreground">
                 Explore exemplary Posit Connect applications and proven patterns from across government.
@@ -103,7 +103,7 @@ const Index = () => {
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <HelpCircle className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="font-semibold">Help with this service</h3>
+                <h3 className="font-semibold">Help With This Service</h3>
               </div>
               <p className="text-sm text-muted-foreground">
                 You can access setup guides, troubleshooting, and mentoring resources.
@@ -114,10 +114,10 @@ const Index = () => {
 
         {/* Latest Updates */}
         <div className="max-w-4xl">
-          <h2 className="text-2xl font-bold mb-6">Latest updates</h2>
+          <h2 className="text-2xl font-bold mb-6">Latest Updates</h2>
           <div className="space-y-6">
             <div className="border-l-4 border-primary pl-6">
-              <h3 className="text-lg font-semibold mb-2">New Python dashboard template available</h3>
+              <h3 className="text-lg font-semibold mb-2">New Python Dashboard Template Available</h3>
               <p className="text-muted-foreground mb-2">
                 A comprehensive Plotly Dash template for government data visualisation, following GDS design principles and accessibility standards.
               </p>
@@ -125,7 +125,7 @@ const Index = () => {
             </div>
             
             <div className="border-l-4 border-primary pl-6">
-              <h3 className="text-lg font-semibold mb-2">R Shiny deployment guide updated</h3>
+              <h3 className="text-lg font-semibold mb-2">R Shiny Deployment Guide Updated</h3>
               <p className="text-muted-foreground mb-2">
                 Enhanced documentation covering containerisation, environment management, and performance optimisation for production deployments.
               </p>
@@ -133,7 +133,7 @@ const Index = () => {
             </div>
             
             <div className="border-l-4 border-primary pl-6">
-              <h3 className="text-lg font-semibold mb-2">Featured: Government Calculator showcase</h3>
+              <h3 className="text-lg font-semibold mb-2">Featured: Government Calculator Showcase</h3>
               <p className="text-muted-foreground mb-2">
                 Interactive calculation tool demonstrating best practices for secure data handling and user-friendly government service design.
               </p>

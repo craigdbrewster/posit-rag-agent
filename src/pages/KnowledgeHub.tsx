@@ -45,12 +45,21 @@ const KnowledgeHub = () => {
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h3 className="font-semibold mb-2">Templates and toolkits</h3>
+            <h3 className="font-semibold mb-2">Templates And Toolkits</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Ready-to-use templates and development toolkits for common government data science tasks
             </p>
             <Button variant="outline" size="sm">
               View Patterns
+            </Button>
+          </Card>
+          <Card className="p-4 hover:bg-secondary/50 transition-colors">
+            <h3 className="font-semibold mb-2">Coaching And Mentoring</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              Connect with experienced practitioners and development opportunities
+            </p>
+            <Button variant="outline" size="sm">
+              Find Support
             </Button>
           </Card>
           <Card className="p-4 hover:bg-secondary/50 transition-colors">
@@ -80,15 +89,6 @@ const KnowledgeHub = () => {
             </p>
             <Button variant="outline" size="sm">
               View Research
-            </Button>
-          </Card>
-          <Card className="p-4 hover:bg-secondary/50 transition-colors">
-            <h3 className="font-semibold mb-2">Coaching and Mentoring</h3>
-            <p className="text-sm text-muted-foreground mb-3">
-              Connect with experienced practitioners and development opportunities
-            </p>
-            <Button variant="outline" size="sm">
-              Find Support
             </Button>
           </Card>
         </div>

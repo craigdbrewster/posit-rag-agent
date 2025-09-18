@@ -25,7 +25,7 @@ const Help = () => {
         </div>
 
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-4">Help with this service</h2>
+          <h2 className="text-3xl font-bold mb-4">Help With This Service</h2>
           <p className="text-lg text-muted-foreground max-w-3xl">
             Get help with using this AI-powered Posit Connect hub and find documentation for effective use.
           </p>
@@ -33,7 +33,7 @@ const Help = () => {
 
         <div className="grid gap-6 lg:grid-cols-2">
           <Card className="p-6">
-            <h3 className="text-xl font-bold mb-4">How to use this service</h3>
+            <h3 className="text-xl font-bold mb-4">How To Use This Service</h3>
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold">1. Ask Posit Connect questions</h4>
@@ -63,7 +63,7 @@ const Help = () => {
           </Card>
 
           <Card className="p-6">
-            <h3 className="text-xl font-bold mb-4">What you can ask about</h3>
+            <h3 className="text-xl font-bold mb-4">What You Can Ask About</h3>
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold">Posit Connect Deployment</h4>
@@ -78,7 +78,7 @@ const Help = () => {
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold">Training & Mentoring</h4>
+                <h4 className="font-semibold">Training And Mentoring</h4>
                 <p className="text-sm text-muted-foreground">
                   Onboarding materials, skill development paths, coaching resources, and one-to-one mentoring guidance.
                 </p>

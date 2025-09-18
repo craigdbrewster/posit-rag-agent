@@ -76,7 +76,7 @@ const ShowcasedApps = () => {
         </div>
 
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-4">Showcased apps</h1>
+          <h1 className="text-3xl font-bold mb-4">Showcased Apps</h1>
           <p className="text-lg text-muted-foreground max-w-3xl">
             Explore exemplary Posit Connect applications and proven patterns from across government departments. 
             These applications demonstrate best practices for data science deployment, user interface design, 
